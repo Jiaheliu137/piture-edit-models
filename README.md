@@ -33,7 +33,7 @@ import * as tf from '@tensorflow/tfjs'
 import '@tensorflow/tfjs-backend-webgpu'
 
 const model = await tf.loadGraphModel(
-  'https://github.com/<USER>/piture-edit-models/releases/download/v1/realesrgan_general_fast-64_model.json'
+  'https://github.com/Jiaheliu137/piture-edit-models/releases/download/v1/realesrgan_general_fast-64_model.json'
 )
 // or via raw.githubusercontent.com if hosted on a branch
 ```
