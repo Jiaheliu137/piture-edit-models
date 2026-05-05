@@ -35,11 +35,14 @@ The auto-tier picker selects:
 - Tile size: 192×192 input → 768×768 output (12 px overlap)
 - Use case: real-world photo upscaling
 
-`realcugan/2x-no-denoise-64/` — Real-CUGAN 2x no-denoise
+`realcugan/2x-no-denoise-192/` — Real-CUGAN 2x no-denoise
 - Source: [`bilibili/ailab/Real-CUGAN`](https://github.com/bilibili/ailab/tree/main/Real-CUGAN) (MIT)
 - Scale: 2× per inference
-- Tile size: 64×64 input → 128×128 output (4 px overlap)
+- Tile size: 192×192 input → 384×384 output (12 px overlap)
 - Use case: anime / illustration upscaling (non-photo content)
+- Note: same trained weights as `2x-no-denoise-64/` (both kept in repo for
+  reference) but with the graph input shape baked at 192×192. Editor uses
+  this larger variant — ~9× fewer tile dispatches per image at no quality cost.
 
 Format: TensorFlow.js GraphModel + FP16 weights. Conversion pipeline
 PyTorch → ONNX → TF SavedModel → TF.js (via tfjs-converter), originally
